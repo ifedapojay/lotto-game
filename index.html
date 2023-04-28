@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css//style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lotto</title>
+</head>
+<body>
+    <p style="background-image:url(IMG_7510GIF;)"></p>
+    
+        <!-- <marquee behavior="" direction="">lottery!!!</marquee> -->
+
+        <p class="yy">lotto!!!</p>
+    <div class="play">
+        <h3 style="color:gold">Baba Ijebu board</h3>
+        <p>Welcome on board, to play please adhere to this instruction</p> 
+        <p>You can play '2' sure and '3' direct on here by supplying your numbers and and seperate with comma","</p>
+        <p> Sample for 2sure: 5x,9x or 3direct: 8x,7x,3x</p>
+
+        <input type="text" id="input" name="" placeholder="****"> <br>
+     <button onclick="lottery()"> baba ijebu</button>
+     <a href=""><button>Try-again</button></a>
+    
+    <p id="show"></p>
+
+
+
+        </div>
+
+        <p class="copyr">dapsnworld</p>
+        
+
+    <script>
+        let userInput= document.getElementById('input');
+        let newUserInput= userInput.value.split(',');
+         let display= document.getElementById('show');
+
+        let result=[];
+            for(let i=0; i<=5; i++){
+                let rand=Math.floor(Math.random()*100);
+                result.push(rand);
+            }
+            //console.log(result)
+            function lottery(){
+                newUserInput= userInput.value.split(',');
+               
+                let firstInput= newUserInput[0];
+                let secondInput= newUserInput[1];
+                 if(newUserInput.length==2){
+                     if (result.includes(Number(firstInput)) && result.includes(Number(secondInput))){
+                        display.innerHTML= `You won some money the result are${result}`
+                     }
+                
+                     else{
+                         display.innerHTML=`You lost so keep trying ${result}`
+                     }
+                 }else if(newUserInput.length===3){
+                      if (result.includes(Number(firstInput)) && result.includes(Number(secondInput)) &&result.includes(Number(thirdInput)))
+                      display.innerHTML= `You won some money the result are${result}`
+
+                        else{
+                      display.innerHTML= `Try once more the result are${result}`
+                        }
+                  }
+                  else{ display.innerHTML= "follow the rules properly"
+
+                  }
+             
+
+            }
+
+            //      function lottery(){
+            //      newUserInput= userInput.value.split(',');
+
+               
+            //      let firstInput= newUserInput[0];
+            //      let secondInput= newUserInput[1];
+            //      let thirdInput = newUserInput[2];
+                  
+             //console.log(firstInput)
+
+
+        
+        
+        </script>
+    
+</body>
+</html>
